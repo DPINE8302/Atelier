@@ -4,10 +4,6 @@
 
 Atelier is a clean, focused, and powerful digital workspace designed for creativity and productivity. It seamlessly blends note-taking, document management, and a complete code playground into a single, offline-first, installable Progressive Web App (PWA). Inspired by the elegance of professional design software, Atelier provides a distraction-free environment to capture your thoughts, build web components, and organize your work.
 
----
-
-![Atelier Screenshot](https://user-images.githubusercontent.com/12345/placeholder.jpg) 
-*(A placeholder for a screenshot of the Atelier application interface)*
 
 ## ✨ Features
 
