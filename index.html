@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-ag" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#18181b" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Prevents Flash of Unstyled Content (FOUC) for dark mode
+      (function() {
+        try {
+          const theme = localStorage.getItem('atelier-theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <style>
+      /* For custom scrollbars to match the Apple aesthetic */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(156, 163, 175, 0.4); /* gray-400 with opacity */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(156, 163, 175, 0.6);
+      }
+      /* Custom styles for rendered markdown content */
+      .markdown-content h1, .markdown-content h2, .markdown-content h3 { font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
+      .markdown-content h1 { font-size: 1.875rem; line-height: 2.25rem; }
+      .markdown-content h2 { font-size: 1.5rem; line-height: 2rem; }
+      .markdown-content h3 { font-size: 1.25rem; line-height: 1.75rem; }
+      .markdown-content p { margin-bottom: 0.75em; line-height: 1.6; }
+      .markdown-content a { color: #2563eb; text-decoration: none; border-bottom: 1px solid #dbeafe; }
+      .markdown-content a:hover { border-bottom-color: #2563eb; }
+      .markdown-content ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 0.75em; }
+      .markdown-content ol { list-style-type: decimal; padding-left: 1.5em; margin-bottom: 0.75em; }
+      .markdown-content blockquote { border-left: 4px solid #e5e7eb; padding-left: 1em; margin: 1em 0; font-style: italic; color: #6b7280; }
+      .dark .markdown-content blockquote { border-color: #4b5563; color: #9ca3af; }
+      .markdown-content code { background-color: rgba(0,0,0,0.04); padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      .dark .markdown-content code { background-color: #374151; }
+      .markdown-content pre { background-color: #1f2937; color: #f9fafb; padding: 1em; border-radius: 0.5rem; overflow-x: auto; margin: 1em 0; }
+      .markdown-content pre code { background-color: transparent; padding: 0; margin: 0; font-size: 1em; }
+      .markdown-content hr { border-top: 1px solid #f3f4f6; margin: 2em 0; }
+      .dark .markdown-content hr { border-color: #374151; }
+      .markdown-content table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+      .markdown-content th, .markdown-content td { border: 1px solid #e5e7eb; padding: 0.5em 0.75em; }
+      .dark .markdown-content th, .dark .markdown-content td { border-color: #4b5563; }
+      .markdown-content th { font-weight: 600; background-color: #f9fafb; }
+      .dark .markdown-content th { background-color: #1f2937; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.536.0",
+    "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter@^15.6.1",
+    "react-syntax-highlighter/": "https://esm.sh/react-syntax-highlighter@^15.6.1/",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.1",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0",
+    "rehype-raw": "https://esm.sh/rehype-raw@^7.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#FBFBFA] dark:bg-zinc-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

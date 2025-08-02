@@ -1,0 +1,8 @@
+{
+  "name": "Atelier",
+  "description": "Atelier is your personal digital workshop, a space for focused work. It combines note-taking, coding, and document management in a clean, offline-first interface designed for clarity and creativity.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "prompt": ""
+}
